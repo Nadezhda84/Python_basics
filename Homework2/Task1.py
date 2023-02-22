@@ -19,7 +19,7 @@ for i in range(n):
         eagle += 1
     else:
         tails += 1
-if eagle>tails:
+if eagle > tails:
     print(f'Mинимальное количество монет, которые нужно перевернуть {tails}')
 else:
     print(f'Mинимальное количество монет, которые нужно перевернуть {eagle}')
