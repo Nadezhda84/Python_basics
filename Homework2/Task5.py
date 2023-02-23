@@ -17,4 +17,4 @@ else:
         n = n // 10
         if n % 10 > max_digit:
             max_digit = n % 10
-print(f'Самая большая цифра в числе: {max_digit}')
+    print(f'Самая большая цифра в числе: {max_digit}')
