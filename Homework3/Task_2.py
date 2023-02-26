@@ -15,3 +15,33 @@
 Набор натуральных чисел можно задать непосредственно в коде,
 например, my_list = [7, 5, 3, 3, 2].
 """
+
+my_list = [23, 15, 15, 10, 8, 7, 5, 3, 3, 2]
+print(my_list)
+
+
+def rating(my_list, n):
+    """
+    Вставляет заданное число в невозрастающий список
+    :param my_list: невозрастающий список
+    :param n: натуральное число
+    :return: невозрастающий список
+    """
+    lenght = len(my_list)
+    for i in range(lenght):
+        if n > my_list[i]:
+            my_list.insert(i, n)
+            return my_list
+    my_list.append(n)
+    return my_list
+
+
+try:
+    n = int(input("Введите натуральное число: "))
+    if n <= 0:
+        print("Вы ввели не натуральное число!")
+    else:
+        my_list_res = rating(my_list, n)
+        print(f"Пользователь ввел число {n}. Результат: {my_list_res}")
+except ValueError:
+    print('Введите натуральное число!')
