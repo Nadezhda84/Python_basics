@@ -11,3 +11,28 @@
     6
     -> 5
 """
+
+
+def find_number(list_1, number):
+    list_dif = []
+    for i in range(len(list_1)):
+        list_dif.append(abs(number - list_1[i]))
+    min_index = list_dif.index(min(list_dif))
+    return list_1[min_index]
+
+
+try:
+    n = int(input('Введите количество элементов в списке: '))
+    my_list = []
+    for i in range(n):
+        num = int(input('Введите натуральное число: '))
+        my_list.append(num)
+    for elem in my_list:
+        print(elem, end=' ')
+    print()
+    item = int(input('Введите натуральное число: '))
+
+    res = find_number(my_list, item)
+    print(res)
+except ValueError:
+    print('Введите натуральное число!')
