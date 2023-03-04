@@ -32,3 +32,6 @@ set_1 = set(my_list_n)
 set_2 = set(my_list_m)
 set_res = set_1.intersection(set_2)
 print(f'Числа, встречающиеся в обоих множествах,: {set_res}')
+
+print(timeit("list_completion(n)",
+             setup="from __main__ import list_completion, n", number=4))

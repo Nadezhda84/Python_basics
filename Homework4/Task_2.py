@@ -13,7 +13,7 @@
 заданной во входном файле грядки.
 """
 from timeit import timeit
-
+print(timeit("""
 n = int(input('Введите число кустов на грядке: '))
 arr = list()
 for i in range(n):
@@ -27,3 +27,4 @@ arr_count.append(arr[-2] + arr[-1] + arr[0])
 print(
     f'Максимальное число ягод, которое можно собрать за один заход:'
     f' {max(arr_count)}')
+""", number=5))
