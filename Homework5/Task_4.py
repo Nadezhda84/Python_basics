@@ -9,18 +9,18 @@
 Нужно обойтисть без создания массива!
 """
 a = 1
-sum = 1
+summa = 1
 
 
 def sum_number(n):
-    global a, sum
+    global a, summa
     if n == 0:
         return a
     else:
         a = a / (-2)
-        sum += a
+        summa += a
         sum_number(n - 1)
-    return sum
+    return summa
 
 
 n = int(input("Введите количество элементов: "))

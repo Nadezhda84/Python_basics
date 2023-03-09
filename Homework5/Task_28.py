@@ -12,17 +12,17 @@
 from timeit import timeit
 
 
-def sum(a):
+def summa(a):
     if a == 1:
         return 1
-    return 1 + sum(a - 1)
+    return 1 + summa(a - 1)
 
 
 try:
     a = int(input('Введите натуральное число а: '))
     b = int(input('Введите натуральное число b: '))
-    print(f'{a} + {b} = {sum(a) + sum(b)}')
+    print(f'{a} + {b} = {summa(a) + summa(b)}')
 except Exception:
     print('Вы ввели не натуральное число!')
 
-print(timeit("sum(a)", setup="from __main__ import sum, a", number=100000))
+print(timeit("summa(a)", setup="from __main__ import summa, a", number=100000))
