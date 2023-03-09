@@ -7,3 +7,13 @@
 A = 3; B = 5 -> 243 (3⁵)
     A = 2; B = 3 -> 8
 """
+
+def pow(a, b):
+    if b == 0:
+        return 1
+    return a * pow(a, b - 1)
+
+
+a = int(input('Введите число а: '))
+b = int(input('Введите натуральное число b: '))
+print(pow(a, b))

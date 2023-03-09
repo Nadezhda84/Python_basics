@@ -10,3 +10,18 @@
 Правой части выражения в рекурсивной ф-ции быть не должно!
 Решите через рекурсию. В задании нельзя применять циклы.
 """
+
+
+def sum_numbers(n):
+    if n == 1:
+        return 1
+    return n + sum_numbers(n - 1)
+
+
+def sum_arith_progr(n):
+    return int(n * (n + 1) / 2)
+
+
+number = int(input('Введите натуральное число n: '))
+
+print(f'{sum_numbers(number)} = {sum_arith_progr(number)}')

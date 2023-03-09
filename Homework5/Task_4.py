@@ -8,3 +8,20 @@
 Решите через рекурсию. В задании нельзя применять циклы.
 Нужно обойтисть без создания массива!
 """
+a = 1
+summa = 1
+
+
+def sum_number(n):
+    global a, summa
+    if n == 0:
+        return a
+    else:
+        a = a / (-2)
+        summa += a
+        sum_number(n - 1)
+    return summa
+
+
+n = int(input("Введите количество элементов: "))
+print(f'Количество элементов - {n}, их сумма - {sum_number(n - 1)}')
