@@ -17,3 +17,28 @@ Position, передать данные, проверить значения а�
 str str(self) - вызывается функциями str, print и format. Возвращает строковое
 представление объекта.
 """
+
+
+class Worker:
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {"wage": wage, "bonus": bonus}
+
+
+class Position(Worker):
+    def get_full_name(self):
+        return f'Работник: {self.surname} {self.name}'
+
+    def get_total_income(self):
+        return f'Доход: {sum(self._income.values())}'
+
+
+worker_1 = Worker('Иван', 'Иванов', 'Тестировщик', 40000, 15000)
+worker_2 = Worker('Петр', 'Петров', 'Разработчик', 140000, 30000)
+
+print(Position.get_full_name(worker_1))
+print(Position.get_total_income(worker_1))
+print(Position.get_full_name(worker_2))
+print(Position.get_total_income(worker_2))
