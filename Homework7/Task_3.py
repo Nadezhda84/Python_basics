@@ -26,6 +26,10 @@ class Worker:
         self.position = position
         self._income = {"wage": wage, "bonus": bonus}
 
+    def __str__(self):
+
+        return f'{self.surname} {self.name} должность {self.position} '
+
 
 class Position(Worker):
     def get_full_name(self):
@@ -37,7 +41,8 @@ class Position(Worker):
 
 worker_1 = Worker('Иван', 'Иванов', 'Тестировщик', 40000, 15000)
 worker_2 = Worker('Петр', 'Петров', 'Разработчик', 140000, 30000)
-
+print(Worker.__str__(worker_1))
+print(Worker.__str__(worker_2))
 print(Position.get_full_name(worker_1))
 print(Position.get_total_income(worker_1))
 print(Position.get_full_name(worker_2))
