@@ -12,5 +12,5 @@ while True:
         new_string = string + '\n'
         my_list.append(new_string)
 
-    with open("test_1.txt", "w") as file_obj:
+    with open("file_1.txt", "w", encoding='utf-8') as file_obj:
         file_obj.writelines(my_list)
