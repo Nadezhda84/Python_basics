@@ -27,6 +27,27 @@
             "price": "10000",
             "buyer": "Petrov P.P.",
             "date": "11.01.2018"
+        },
+        {
+            "item": "компьютер",
+            "quantity": "2",
+            "price": "210000",
+            "buyer": "Ivanov I.I.",
+            "date": "15.03.2023"
+        },
+        {
+            "item": "компьютер",
+            "quantity": "1",
+            "price": "100000",
+            "buyer": "Petrov P.P.",
+            "date": "30.12.2022"
+        },
+        {
+            "item": "клавиатура",
+            "quantity": "1",
+            "price": "3000",
+            "buyer": "Petrov P.P.",
+            "date": "30.12.2022"
         }
     ]
 }
