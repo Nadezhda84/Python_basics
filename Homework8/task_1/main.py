@@ -100,4 +100,3 @@ def write_to_csv(filepath):
 
 if __name__ == '__main__':
     write_to_csv('./new_data_report.csv')
-
