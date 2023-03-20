@@ -3,8 +3,8 @@ items:
 - printer
 - keyboard
 - mouse
-items_ptice:
-  computer: 200€-1000€
+items_price:
+  computer: 100€-1000€
   keyboard: 5€-50€
   mouse: 4€-7€
   printer: 100€-300€
