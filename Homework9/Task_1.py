@@ -53,10 +53,7 @@ class Position(Worker):
 
 
 worker_1 = Worker(5, 'Иванов', 'Тестировщик', 40000, 15000)
-# worker_2 = Worker('Петр', 'Петров', 6 , 140000, 30000)
 print(Worker(worker_1))
-print(Worker(worker_2))
 print(Position.get_full_name(worker_1))
 print(Position.get_total_income(worker_1))
-print(Position.get_full_name(worker_2))
-print(Position.get_total_income(worker_2))
+
