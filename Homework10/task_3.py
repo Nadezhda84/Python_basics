@@ -10,7 +10,25 @@
 придумайте как это сделать
 """
 
-my_list = [bytes('attribute', 'utf-8'), bytes('класс', 'utf-8'),
-           bytes('функция', 'utf-8'), bytes('type', 'utf-8')]
+import re
+
+
+def has_cyrillic(text):
+    return bool(re.search('[а-яА-Я]', text))
+
+
+my_list = ['attribute', 'класс', 'функция', 'type']
+my_list_bytes = []
+my_list_error = []
 for line in my_list:
-    print(line)
+    if has_cyrillic(line) == True:
+        my_list_error.append(line)
+    else:
+        my_list_bytes.append(bytes(line, 'utf-8'))
+
+print(
+    f"Данные слова можно записать в байтовом типе с помощью маркировки b'': "
+    f"{my_list_bytes}")
+print(
+    f"Данные слова невозможно записать в байтовом типе с помощью маркировки b'': "
+    f"{my_list_error}")
