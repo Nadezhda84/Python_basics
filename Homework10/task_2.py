@@ -10,3 +10,9 @@
 --- b'class' - используйте маркировку b''
 --- используйте списки и циклы, не дублируйте функции
 """
+my_list = [b'class', b'function', b'method']
+
+for line in my_list:
+    print('Тип переменной: {}\n'.format(type(line)))
+    print('Содержание переменной: {}\n'.format(line))
+    print('Длина переменной: {}\n'.format(len(line)))
