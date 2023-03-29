@@ -13,10 +13,27 @@ Position, передать данные, проверить значения а�
 П.С. попытайтесь добить вывода информации о сотруднике также через перегрузку
 str str(self) - вызывается функциями str, print и format. Возвращает строковое
 представление объекта.
+
+Реализовать дескрипторы для любых двух классов
 """
 
 
+class NonStr:
+
+    def __set__(self, instance, value):
+        if type(value) != str:
+            raise ValueError("Должно иметь строковый тип!")
+        instance.__dict__[self.my_attr] = value
+
+    def __set_name__(self, owner, my_attr):
+        self.my_attr = my_attr
+
+
 class Worker:
+    name = NonStr()
+    surname = NonStr()
+    position = NonStr()
+
     def __init__(self, name, surname, position, wage, bonus):
         self.name = name
         self.surname = surname
@@ -24,7 +41,6 @@ class Worker:
         self._income = {"wage": wage, "bonus": bonus}
 
     def __str__(self):
-
         return f'{self.surname} {self.name} должность {self.position} '
 
 
@@ -36,11 +52,8 @@ class Position(Worker):
         return f'Доход: {sum(self._income.values())}'
 
 
-worker_1 = Worker('Иван', 'Иванов', 'Тестировщик', 40000, 15000)
-worker_2 = Worker('Петр', 'Петров', 'Разработчик', 140000, 30000)
-print(Worker.__str__(worker_1))
-print(Worker.__str__(worker_2))
+worker_1 = Worker(5, 'Иванов', 'Тестировщик', 40000, 15000)
+print(Worker(worker_1))
 print(Position.get_full_name(worker_1))
 print(Position.get_total_income(worker_1))
-print(Position.get_full_name(worker_2))
-print(Position.get_total_income(worker_2))
+
