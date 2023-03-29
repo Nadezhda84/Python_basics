@@ -16,3 +16,15 @@
 Решите через рекурсию. В задании нельзя применять циклы.
 Допускается исп-е встроенных ф-ций
 """
+
+
+def print_ascii(code_ascii=32):
+    if code_ascii == 128:
+        return
+    print(f'{code_ascii} - {chr(code_ascii)}', end=' ')
+    if (code_ascii - 31) % 10 == 0:
+        print('\n')
+    print_ascii(code_ascii + 1)
+
+
+print_ascii()

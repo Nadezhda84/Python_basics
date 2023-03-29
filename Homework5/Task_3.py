@@ -15,3 +15,24 @@
 Не забудьте проверить на числе, которое оканчивается на 0.
 1230 -> 0321
 """
+
+my_str = []
+
+
+def reverse_number(n):
+    if n == 0:
+        return
+    else:
+        digit = n % 10
+        global my_str
+        my_str.append(digit)
+        reverse_number(n // 10)
+    return my_str
+
+
+try:
+    n = int(input('Введите число, которое требуется перевернуть: '))
+    upend_n= ''.join(map(str, reverse_number(n)))
+    print(f'Перевернутое число: {upend_n}')
+except ValueError:
+    print('Введите натуральное число!')
